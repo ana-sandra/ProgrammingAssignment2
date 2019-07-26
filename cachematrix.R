@@ -2,7 +2,7 @@
 ## functions do
 
 ## Write a short comment describing this function
-## setting up the matrix x
+## storing the matrix
 makeCacheMatrix <- function(x = matrix()) {
 invrs <- NULL
   set <- function(y){
@@ -17,7 +17,7 @@ invrs <- NULL
 
 
 ## Write a short comment describing this function
-## inverting the matrix x
+## writing function to invert the matrix 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         invrs <- x$getInverse()
@@ -30,3 +30,12 @@ cacheSolve <- function(x, ...) {
   x$setInverse(invrs)
   invrs      
 }
+
+#additional
+##testing the function, looks like it works
+my_matrix<-matrix(c(1,5,3,4),2,2)
+
+my_matrix_1<-makeCacheMatrix(my_matrix)
+cacheSolve(my_matrix_1)
+cacheSolve(makeCacheMatrix(my_matrix))
+
